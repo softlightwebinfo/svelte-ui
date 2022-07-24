@@ -1,5 +1,83 @@
 :root {
-	--ui-primary: white;
-	--ui-secondary: black;
 	--ui-border-default: 4px;
+
+	--ui-theme-primary: #{$theme-primary};
+	--ui-theme-secondary: #{$theme-secondary};
+	--ui-dark: #{$dark};
+	--ui-dark-color: #979ba9;
+	--ui-border-radius-soft: 4px;
+	--ui-color-secondary: #8898aa;
+	--ui-color-danger: #ff5050;
+	--ui-black: black;
+	--ui-blue: #556ee6;
+	--ui-indigo: #564ab1;
+	--ui-purple: #6f42c1;
+	--ui-pink: #e83e8c;
+	--ui-red: #f46a6a;
+	--ui-orange: #f1734f;
+	--ui-yellow: #f1b44c;
+	--ui-green: #34c38f;
+	--ui-teal: #050505;
+	--ui-cyan: #50a5f1;
+	--ui-white: #fff;
+	--ui-gray: #74788d;
+	--ui-gray-dark: #343a40;
+	--ui-gray-100: #f8f9fa;
+	--ui-gray-200: #eff2f7;
+	--ui-gray-300: #f6f6f6;
+	--ui-gray-400: #ced4da;
+	--ui-gray-500: #adb5bd;
+	--ui-gray-600: #74788d;
+	--ui-gray-700: #495057;
+	--ui-gray-800: #343a40;
+	--ui-gray-900: #212529;
+
+	@each $name, $color in $colors {
+		--ui-#{$name}: #{$color};
+	}
+
+	--ui-pink: #e83e8c;
+	--ui-light: #eff2f7;
+	--ui-alert: #ff2929;
+	--ui-primary-rgb: 85, 110, 230;
+	--ui-secondary-rgb: 116, 120, 141;
+	--ui-success-rgb: 52, 195, 143;
+	--ui-info-rgb: 80, 165, 241;
+	--ui-warning-rgb: 241, 180, 76;
+	--ui-danger-rgb: 244, 106, 106;
+	--ui-pink-rgb: 232, 62, 140;
+	--ui-light-rgb: 239, 242, 247;
+	--ui-dark-rgb: 52, 58, 64;
+	--ui-white-rgb: 255, 255, 255;
+	--ui-black-rgb: 0, 0, 0;
+	--ui-body-rgb: 73, 80, 87;
+	--ui-font-sans-serif: 'Poppins', sans-serif;
+	--ui-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
+	--ui-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	--ui-body-font-family: var(--font-sans-serif);
+	--ui-body-font-size: 0.8125rem;
+	--ui-body-font-weight: 400;
+	--ui-body-line-height: 1.5;
+	--ui-body-color: #495057;
+	--ui-body-bg: #f8f8fb;
+	--ui-transition: all 1s cubic-bezier(0.25, 1, 0.35, 1) 0s;
+	--ui-navbar_height: 70px;
+	--ui-dashboard-sidebar__width: 250px;
+	--ui-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	--ui-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
+	--ui-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	--ui-big-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+	--ui-button-shadow: rgba(43, 45, 80, 0.1) 0px 0px 0px 1px,
+		rgba(43, 45, 80, 0.08) 0px 2px 5px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1.5px 0px,
+		rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
+	--ui-description: #5e6e82;
+	--ui-big-title: 80px;
+	--ui-light-primary: rgba(226, 14, 2, 0.2);
+	--ui-dark-primary: #fb9678;
+	--ui-dark-light: #191919;
+	--ui-raised: #{$raised};
 }

@@ -1,0 +1,22 @@
+$theme-primary: white;
+$theme-secondary: black;
+$success: #34c38f;
+$info: #50a5f1;
+$primary: #556ee6;
+$warning: #f1b44c;
+$danger: #f46a6a;
+$dark: #343a40;
+$secondary: #74788d;
+$default: rgb(222, 203, 203);
+$raised: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+	0 1px 5px 0 rgba(0, 0, 0, 0.12);
+$colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'danger': $danger,
+	'info': $info,
+	'success': $success,
+	'warning': $warning,
+	'default': $default,
+	'dark': $dark
+);

@@ -1,0 +1,16 @@
+@import './vars.scss';
+@mixin getThemeColors($isBg: true) {
+	@each $name, $color in $colors {
+		.#{$name} {
+			@if $isBg {
+				background-color: var(--ui-#{$name});
+				color: var(--ui-theme-primary);
+				&:hover {
+					opacity: 0.9;
+				}
+			} @else {
+				color: var(--ui-#{$name});
+			}
+		}
+	}
+}
