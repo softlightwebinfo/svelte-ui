@@ -1122,6 +1122,18 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@codeunic/svelte-ui@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@codeunic/svelte-ui/-/svelte-ui-0.0.1.tgz#1cf92c3b0bca79175c74fbfcf25757daf0df75ee"
+  integrity sha512-Q54AwoeQlasA7sGII2L8qYYFT26HEZI3aedfm7G0qpuUoCOBvCQivYspC+YDSgOFn7i6ZwfR7VsXtl4brBIUlQ==
+  dependencies:
+    "@storybook/addon-svelte-csf" "^2.0.6"
+    postcss "^8.4.14"
+    postcss-load-config "^4.0.1"
+    sass "^1.54.0"
+    sass-loader "^10.0.0"
+    svelte2tsx "^0.5.12"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"

@@ -4,7 +4,7 @@ build:
 	yarn build-storybook
 deploy:
 	yarn package
-	yarn publish --access public
+	cd package && yarn publish --access public
 	node ./scripts/deploy.cjs
 	git add .
 	git commit -am'$(m)'
