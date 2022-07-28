@@ -1,3 +1,3 @@
-import * as accordion from "./accordion";
- import * as inplace from "./inplace";
+import accordion from "./accordion";
+ import inplace from "./inplace";
 export { accordion, inplace };

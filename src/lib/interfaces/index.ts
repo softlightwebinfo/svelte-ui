@@ -1,9 +1,9 @@
-import * as IItem from "./IItem";
- import * as IMenuItem from "./IMenuItem";
- import * as IOption from "./IOption";
- import * as ISelectBase from "./ISelectBase";
- import * as TInputType from "./TInputType";
- import * as TMenuBarItems from "./TMenuBarItems";
- import * as TSize from "./TSize";
- import * as TThemeColor from "./TThemeColor";
+import IItem from "./IItem";
+ import IMenuItem from "./IMenuItem";
+ import IOption from "./IOption";
+ import ISelectBase from "./ISelectBase";
+ import TInputType from "./TInputType";
+ import TMenuBarItems from "./TMenuBarItems";
+ import TSize from "./TSize";
+ import TThemeColor from "./TThemeColor";
 export { IItem, IMenuItem, IOption, ISelectBase, TInputType, TMenuBarItems, TSize, TThemeColor };

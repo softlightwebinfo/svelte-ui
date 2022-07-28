@@ -25,7 +25,7 @@ const components = (path, subPath, all = false) => {
 
 	const template = (files, directory) => {
 		return `
-  ${files.map(file => ` ${all ? "export *" : `import * as ${file.split(".svelte")[0].split(".ts")[0]}`} from "./${file.split(".ts")[0]}";`).join("\n")}
+  ${files.map(file => ` ${all ? "export *" : `import ${file.split(".svelte")[0].split(".ts")[0]}`} from "./${file.split(".ts")[0]}";`).join("\n")}
 ${all ? '' : `export { ${files.map(file => file.split(".svelte")[0].split(".ts")[0]).join(", ")} };`}
 `.trim();
 	};

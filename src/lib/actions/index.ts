@@ -1,5 +1,5 @@
-import * as clickOutside from "./clickOutside";
- import * as keyEnter from "./keyEnter";
- import * as longpress from "./longpress";
- import * as typeAction from "./typeAction";
+import clickOutside from "./clickOutside";
+ import keyEnter from "./keyEnter";
+ import longpress from "./longpress";
+ import typeAction from "./typeAction";
 export { clickOutside, keyEnter, longpress, typeAction };
