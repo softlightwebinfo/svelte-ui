@@ -5,14 +5,15 @@
 	import type { TSize } from '$lib/interfaces/TSize';
 	import { BEM } from '$lib/models/BEM';
 
-	export let value: string = '';
-	export let id: string = '';
-	export let placeholder: string = '';
-	export let name: string = '';
-	export let disabled: boolean = false;
-	export let readonly: boolean = false;
+	export let value = '';
+	export let id = '';
+	export let placeholder = '';
+	export let name = '';
+	export let disabled = false;
+	export let readonly = false;
 	export let type: TInputType = 'text';
 	export let size: TSize = 'md';
+	export let autoFocus = false;
 
 	const bm = new BEM('UI-InputText', {
 		[size]: !!size
@@ -29,6 +30,7 @@
 	{placeholder}
 	{readonly}
 	{disabled}
+	{autoFocus}
 />
 
 <style lang="scss">
