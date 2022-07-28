@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Navbar from './Navbar.svelte';
+	import Navbar from '$lib/components/atoms/Navbar.svelte';
 	import type { TMenuBarItems } from '$lib/interfaces/TMenuBarItems';
 	import TieredMenu from './TieredMenu.svelte';
 	export let items: TMenuBarItems = [];
