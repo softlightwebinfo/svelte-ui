@@ -41,7 +41,6 @@ components("src/lib/components", "templates");
 components("src/lib/components", "pages");
 components("src/lib/components", "", true);
 components("src/lib/actions", "", true);
-components("src/lib/context", "", true);
 components("src/lib/functions", "", true);
 components("src/lib/interfaces", "", true);
 components("src/lib/models", "", true);
