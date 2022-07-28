@@ -15,7 +15,8 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: var(--ui-surface-a);
-	font-family: var(--ui-font-family);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	font-weight: normal;
 	color: var(--ui-text-color);
 	-webkit-font-smoothing: antialiased;
@@ -86,7 +87,9 @@ input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
-
+ul {
+	list-style: none;
+}
 @keyframes pulse {
 	0% {
 		background-color: rgba(165, 165, 165, 0.1);

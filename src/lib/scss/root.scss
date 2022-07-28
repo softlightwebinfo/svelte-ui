@@ -1,6 +1,4 @@
 :root {
-	--ui-border-default: 4px;
-
 	--ui-theme-primary: #{$theme-primary};
 	--ui-theme-secondary: #{$theme-secondary};
 	--ui-dark: #{$dark};
@@ -53,7 +51,7 @@
 	--ui-body-rgb: 73, 80, 87;
 	--ui-font-sans-serif: 'Poppins', sans-serif;
 	--ui-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-		monospace;
+	monospace;
 	--ui-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 	--ui-body-font-family: var(--font-sans-serif);
 	--ui-body-font-size: 0.8125rem;
@@ -65,19 +63,30 @@
 	--ui-navbar_height: 70px;
 	--ui-dashboard-sidebar__width: 250px;
 	--ui-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-		'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-		'Segoe UI Symbol', 'Noto Color Emoji';
+	'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+	'Segoe UI Symbol', 'Noto Color Emoji';
 	--ui-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-		monospace;
+	monospace;
 	--ui-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 	--ui-big-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
 	--ui-button-shadow: rgba(43, 45, 80, 0.1) 0px 0px 0px 1px,
-		rgba(43, 45, 80, 0.08) 0px 2px 5px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1.5px 0px,
-		rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
+	rgba(43, 45, 80, 0.08) 0px 2px 5px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1.5px 0px,
+	rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
 	--ui-description: #5e6e82;
 	--ui-big-title: 80px;
 	--ui-light-primary: rgba(226, 14, 2, 0.2);
 	--ui-dark-primary: #fb9678;
 	--ui-dark-light: #191919;
 	--ui-raised: #{$raised};
+	--ui-columns: 12;
+}
+
+:root {
+	--ui-co-navbar: #f8f9fa;
+}
+
+:root {
+	--ui-border-default: 4px;
+	--ui-radius: 6px;
+	--ui-disabled: 0.4;
 }

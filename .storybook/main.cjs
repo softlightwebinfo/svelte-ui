@@ -10,7 +10,6 @@ module.exports = {
 		'@storybook/addon-svelte-csf'
 	],
 	webpackFinal: async (config) => {
-
 		config.module.rules.push({
 			test: /\.scss$/,
 			use: ['style-loader', 'css-loader?url=false', 'sass-loader'],
@@ -28,6 +27,9 @@ module.exports = {
 			sveltePreprocess({
 				postcss: true,
 				preserve: ['ld+json'],
+				scss: {
+					prependData: `@import './src/lib/scss/mixins.scss';`
+				}
 			}),
 		],
 	},

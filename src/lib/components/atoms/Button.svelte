@@ -8,6 +8,8 @@
 	 * Rounded button
 	 */
 	export let rounded: boolean = false;
+	export let icon: string = '';
+	export let iconRight: string = '';
 	/**
 	 * Label text
 	 */
@@ -25,30 +27,38 @@
 	on:click
 	{disabled}
 	class:noLabel
-	class:iconLeft={!!$$slots.left}
-	class:iconRight={!!$$slots.right}
+	class:iconLeft={!icon && !!$$slots.left}
+	class:iconRight={!icon && !!$$slots.right}
 	class:isIcon
 	class:raised
 	style={$$props.style}
 >
-	{#if $$slots.left}
+	{#if !!icon || $$slots.left}
 		<div class="left">
-			<slot name="left" />
+			{#if $$slots.left}
+				<slot name="left" />
+			{:else}
+				<i class={icon} />
+			{/if}
 		</div>
 	{/if}
 	<slot>
 		<span>{label}</span>
 	</slot>
-	{#if $$slots.right}
+	{#if !!icon || $$slots.right}
 		<div class="right">
-			<slot name="right" />
+			{#if $$slots.right}
+				<slot name="right" />
+			{:else}
+				<i class={iconRight} />
+			{/if}
 		</div>
 	{/if}
 </button>
 
 <style lang="scss">
-	@import '../../scss/mixins.scss';
-	
+	// @import '../../scss/mixins';
+
 	[disabled] {
 		opacity: 0.6;
 	}

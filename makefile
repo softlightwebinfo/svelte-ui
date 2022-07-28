@@ -2,6 +2,7 @@ dev:
 	yarn storybook
 build:
 	yarn build-storybook
+	yarn deploy-storybook
 deploy:
 	yarn package
 	cd package && yarn publish --access public

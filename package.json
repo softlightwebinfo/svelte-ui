@@ -49,6 +49,8 @@
   "type": "module",
   "dependencies": {
     "@storybook/addon-svelte-csf": "^2.0.6",
+    "gh-pages": "^4.0.0",
+    "marked": "^4.0.18",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "sass": "^1.54.0",

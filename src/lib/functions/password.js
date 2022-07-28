@@ -1,0 +1,1 @@
+export const password = (password) => password.replace(/\d(?!$)/g, '•'); 

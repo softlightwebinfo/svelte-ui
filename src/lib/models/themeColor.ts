@@ -7,4 +7,6 @@ export const themeColor = {
     "warning": "warning",
     "dark": "dark",
     "default": "default",
+    "light": "light",
+    "white": "white",
 };
