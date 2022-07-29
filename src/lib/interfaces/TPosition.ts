@@ -1,1 +1,1 @@
-export type  TPosition = 'left' | 'right' | 'up' | 'down';
+export type TPosition = 'left' | 'right' | 'up' | 'down';
