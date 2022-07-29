@@ -37,6 +37,7 @@ const mvFiles = (targetDirectory, outputDirectory) => {
 	fs.cpSync(`${targetDirectory}`, `${outputDirectory}`, {
 		recursive: true,
 	})
+	fs.rmSync(`${outputDirectory}/*.js`)
 }
 
 getVersion();
