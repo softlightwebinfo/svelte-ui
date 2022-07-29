@@ -2,7 +2,7 @@
 	import Navbar from '$lib/components/atoms/Navbar.svelte';
 	import type { TMenuBarItems } from '$lib/interfaces/TMenuBarItems';
 	import TieredMenu from './TieredMenu.svelte';
-	import { TThemeColor } from "../../interfaces";
+	import { TThemeColor } from "$lib/interfaces/TThemeColor";
 
 	export let items: TMenuBarItems = [];
 	export let isMenu = true;

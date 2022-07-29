@@ -2,7 +2,7 @@
 	import { BEM } from "$lib/models/BEM";
 	import DropdownMenu from "./DropdownMenu.svelte";
 	import { createEventDispatcher } from "svelte";
-	import { TPosition } from "../../interfaces/TPosition";
+	import { TPosition } from "$lib/interfaces/TPosition";
 	import { clickOutside } from "../../actions";
 
 	const dispatch = createEventDispatcher();

@@ -33,6 +33,12 @@ ${all ? '' : `export { ${files.map(file => file.split(".svelte")[0].split(".ts")
 	fs.writeFileSync(`${path}/${subPath}/index.ts`, template(files, `${path}/${subPath}`));
 }
 
+const mvFiles = (targetDirectory, outputDirectory) => {
+	fs.cpSync(`${targetDirectory}`, `${outputDirectory}`, {
+		recursive: true,
+	})
+}
+
 getVersion();
 components("src/lib/components", "atoms");
 components("src/lib/components", "molecules");
@@ -43,3 +49,4 @@ components("src/lib/components", "", true);
 components("src/lib/actions", "", true);
 components("src/lib/functions", "", true);
 components("src/lib/models", "", true);
+mvFiles("./src/lib/interfaces", "./package/interfaces")
