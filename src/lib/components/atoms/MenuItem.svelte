@@ -2,23 +2,32 @@
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
-	export let isHeader: boolean = false;
-	export let href: string = '#';
-	export let icon: string = '';
-	export let iconRight: string = '';
-	export let disabled: boolean = false;
-	export let command: (event: any) => void = () => {};
-	export let active: boolean = false;
+	export let isHeader = false;
+	export let href = '#';
+	export let icon = '';
+	export let iconRight = '';
+	export let disabled = false;
+	export let command: (event: any) => void = () => {
+	};
+	export let active = false;
+	export let open = false;
+	import { BEM } from "$lib/models/BEM";
+
+	const bm = new BEM('UI-MenuItem', {});
+	bm.append($$props.class);
 </script>
 
 <li
-	class="UI-MenuItem"
+	class={bm.toString()}
 	class:isHeader
 	class:disabled
 	class:active
+	class:open
 	on:click={(e) => {
-		dispatch('click', $$props);
-		command({ event: e, item: $$props });
+		dispatch('click', {...$$props, event:e});
+		if(command){
+			command({ event: e, item: $$props });
+		}
 	}}
 >
 	{#if isHeader}

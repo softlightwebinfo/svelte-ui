@@ -4,6 +4,7 @@ build:
 	yarn build-storybook
 	yarn deploy-storybook
 deploy:
+	node ./scripts/deploy.cjs
 	yarn package
 	cd package && yarn publish --access public
 	node ./scripts/deploy.cjs

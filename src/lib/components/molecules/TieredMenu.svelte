@@ -5,25 +5,33 @@
 	import MenuSeparator from '../atoms/MenuSeparator.svelte';
 
 	export let items: TMenuBarItems = [];
-	export let horizontal: boolean = false;
+	export let horizontal = false;
+	export let desplegable = false;
 </script>
 
 {#if items.length}
-	<ul class="UI-TieredMenu" class:horizontal>
-		{#each items as item}
+	<ul class="UI-TieredMenu" class:horizontal class:desplegable>
+		{#each items as item,index}
 			{#if item.separator}
-				<MenuSeparator />
+				<MenuSeparator/>
 			{:else}
 				<MenuItem
+					on:click={(e)=>{
+						console.log("HOLA",e)
+						e.detail.event.stopPropagation()
+						if(!item.items) return;
+						item.open = !item.open;
+					}}
 					command={item.command}
 					disabled={item.disabled}
 					href={item.href}
 					icon={item.icon}
-					iconRight={item.items && 'fa fa-chevron-right'}
+					iconRight={item.items && `fa fa-chevron-${item.open?'down':'right'}`}
+					open="{item.open}"
 				>
 					{item.label}
 					<MenuAtom slot="content" show={!!item.items}>
-						<svelte:self items={item.items} />
+						<svelte:self items={item.items} {desplegable}/>
 					</MenuAtom>
 				</MenuItem>
 			{/if}
@@ -33,22 +41,46 @@
 
 <style lang="scss">
 	ul {
+		width: 100%;
+
 		:global(.UI-MenuAtom) {
 			display: none;
 		}
-		> :global(.UI-MenuItem:hover > .UI-MenuAtom) {
-			display: flex;
-			position: absolute;
-			left: 100%;
-			flex-direction: column;
-			top: 0;
+
+		&:not(.desplegable) {
+			> :global(.UI-MenuItem:hover > .UI-MenuAtom) {
+				display: flex;
+				position: absolute;
+				left: 100%;
+				flex-direction: column;
+				top: 0;
+			}
 		}
 	}
+
 	.horizontal {
 		display: flex;
-		> :global(.UI-MenuItem:hover > .UI-MenuAtom) {
-			top: 100%;
-			left: 0;
+
+		&:not(.desplegable) {
+			> :global(.UI-MenuItem:hover > .UI-MenuAtom) {
+				top: 100%;
+				left: 0;
+			}
+		}
+	}
+
+	.desplegable {
+		position: relative;
+
+		:global(.UI-MenuItem.open > .UI-MenuAtom) {
+			display: flex;
+			position: relative;
+			width: 100%;
+			border: 0;
+			border-top: 1px solid gainsboro;
+			border-radius: 0;
+			border-bottom: 1px solid gainsboro;
+			background: whitesmoke;
 		}
 	}
 </style>

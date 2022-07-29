@@ -3,8 +3,8 @@
 </script>
 
 {#if show}
-	<div class="UI-MenuAtom" style={$$props.style}>
-		<slot />
+	<div class:show class="UI-MenuAtom" style={$$props.style}>
+		<slot/>
 	</div>
 {/if}
 

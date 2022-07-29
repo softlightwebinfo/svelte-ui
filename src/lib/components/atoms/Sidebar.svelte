@@ -9,16 +9,21 @@
 
 	export let title = ''
 	export let open = true;
+	export let showHeader = true;
+	export let paddingContent = true;
+
 	const onClose = () => dispatch('close')
 </script>
-<aside class:open class="{bm.toString()}" style="{$$props.style}">
-	<header>
-		<span>{title}</span>
-		<div class="actions">
-			<slot name="headerActions"></slot>
-			<Button isIcon rounded icon="fa fa-times" on:click={onClose}/>
-		</div>
-	</header>
+<aside class:open class="{bm.toString()}" style="{$$props.style}" class:paddingContent>
+	{#if showHeader}
+		<header>
+			<span>{title}</span>
+			<div class="actions">
+				<slot name="headerActions"></slot>
+				<Button isIcon rounded icon="fa fa-times" on:click={onClose}/>
+			</div>
+		</header>
+	{/if}
 	<section>
 		<slot/>
 	</section>
@@ -40,7 +45,7 @@
 		transform: translateZ(0);
 		position: relative;
 		height: 100%;
-		transition: left 0.3s ease-in-out
+		transition: all 0.3s ease-in-out;
 	}
 
 	.open {
@@ -68,9 +73,17 @@
 	section {
 		overflow-y: auto;
 		flex-grow: 1;
-		padding: 1.25rem;
+
 		width: 100%;
 		height: 100%;
 		padding-top: 0;
+	}
+
+	aside {
+		&:not(.paddingContent) {
+			section {
+				padding: 0;
+			}
+		}
 	}
 </style>

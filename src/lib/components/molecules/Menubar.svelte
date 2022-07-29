@@ -2,19 +2,24 @@
 	import Navbar from '$lib/components/atoms/Navbar.svelte';
 	import type { TMenuBarItems } from '$lib/interfaces/TMenuBarItems';
 	import TieredMenu from './TieredMenu.svelte';
+	import { TThemeColor } from "../../interfaces";
+
 	export let items: TMenuBarItems = [];
+	export let isMenu = true;
+	export let isFixed = true;
+	export let theme: TThemeColor = 'white';
 </script>
 
-<Navbar class={$$props.class}>
+<Navbar {isMenu} {isFixed} {theme} class={$$props.class}>
 	{#if $$slots.start}
 		<div class="start">
-			<slot name="start" />
+			<slot name="start"/>
 		</div>
 	{/if}
-	<TieredMenu horizontal {items} />
+	<TieredMenu horizontal {items}/>
 	{#if $$slots.end}
 		<div class="end">
-			<slot name="end" />
+			<slot name="end"/>
 		</div>
 	{/if}
 </Navbar>
