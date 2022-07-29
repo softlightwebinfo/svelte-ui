@@ -6,7 +6,7 @@
 	import { ITPLDashboardStore } from "../../interfaces/ITPLDashboardStore";
 	import { setContext } from "svelte";
 	import { key } from "../../context/tplDashboard";
-	import Button from "../../../../package/components/atoms/Button.svelte";
+	import Button from "../atoms/Button.svelte";
 	import Group from "../atoms/Group.svelte";
 	import Sidebar from "../atoms/Sidebar.svelte";
 

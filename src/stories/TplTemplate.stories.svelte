@@ -2,14 +2,14 @@
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 	import TplDashboard from "../lib/components/templates/TplDashboard.svelte";
 	import Avatar from "../lib/components/atoms/Avatar.svelte";
+	import Button from "../lib/components/atoms/Button.svelte";
+	import OverlayBadge from "../lib/components/atoms/OverlayBadge.svelte";
+	import Badge from "../lib/components/atoms/Badge.svelte";
+	import Divider from "../lib/components/atoms/Divider.svelte";
 	import imageAvatar from '$lib/assets/avatar.jpeg';
-	import Group from "../lib/components/atoms/Group.svelte";
-	import Button from "../../package/components/atoms/Button.svelte";
-	import OverlayBadge from "../../package/components/atoms/OverlayBadge.svelte";
-	import Badge from "../../package/components/atoms/Badge.svelte";
+	import Group from "../lib/components/atoms/Group.svelte"
 	import Dropdown from "../lib/components/atoms/Dropdown.svelte";
 	import MenuList from "../lib/components/molecules/MenuList.svelte";
-	import Divider from "../../package/components/atoms/Divider.svelte";
 	import TieredMenu from "../lib/components/molecules/TieredMenu.svelte";
 
 	const menuBar = [
