@@ -1,28 +1,30 @@
 <script lang="ts">
 	import { classNames } from '$lib/functions/classNames';
 	import type { TThemeColor } from '$lib/interfaces/TThemeColor';
+	import type { TSize } from "../../interfaces/TSize";
 
 	const [className] = classNames('Button');
 
 	/**
 	 * Rounded button
 	 */
-	export let rounded: boolean = false;
-	export let icon: string = '';
-	export let iconRight: string = '';
+	export let rounded = false;
+	export let icon = '';
+	export let iconRight = '';
 	/**
 	 * Label text
 	 */
-	export let label: string = '';
-	export let disabled: boolean = false;
-	export let isIcon: boolean = false;
+	export let label = '';
+	export let disabled = false;
+	export let isIcon = false;
 	export let theme: TThemeColor = '';
-	export let raised: boolean = false;
+	export let raised = false;
+	export let size: TSize = 'md'
 	$: noLabel = !label && !$$slots.default && !$$slots.left && !$$slots.right;
 </script>
 
 <button
-	class={[className, theme, $$props.class].join(' ')}
+	class={[className, theme, $$props.class, size].join(' ')}
 	class:rounded
 	on:click
 	{disabled}
@@ -45,7 +47,7 @@
 	<slot>
 		<span>{label}</span>
 	</slot>
-	{#if !!icon || $$slots.right}
+	{#if !!iconRight || $$slots.right}
 		<div class="right">
 			{#if $$slots.right}
 				<slot name="right" />
@@ -62,15 +64,12 @@
 	[disabled] {
 		opacity: 0.6;
 	}
+
 	button {
 		height: var(--ui-button_size-height, 33px);
 		min-width: var(--ui-button_size-min-width, 33px);
 		width: var(--ui-button_size-width, auto);
-		display: inline-flex;
-		align-items: center;
 		position: relative;
-		padding: 0;
-		margin-right: 0.1em;
 		text-decoration: none;
 		cursor: pointer;
 		text-align: center;
@@ -81,31 +80,32 @@
 		outline: 0 none;
 		border-radius: var(--ui-border-default);
 		transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+		padding: 0 15px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+
+		i,
+		:global(i) {
+			color: inherit;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #b1b3f8, 0 1px 2px 0 black;
+			outline: 0 none;
+			outline-offset: 0;
+		}
 	}
 	span {
 		display: block;
 		line-height: normal;
 		padding: 0.5rem 1rem;
 	}
-	.left {
-		padding-left: 10px;
-	}
-	.iconLeft {
-		span {
-			padding-left: 5px;
-		}
-	}
-	.iconRight {
-		span {
-			padding-right: 5px;
-		}
-	}
-	.right {
-		padding-right: 10px;
-	}
+
 	.rounded {
 		border-radius: 2rem;
 	}
+
 	.noLabel {
 		.left,
 		.right {

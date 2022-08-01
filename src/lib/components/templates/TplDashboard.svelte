@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { BEM } from "../../models/BEM";
 	import Menubar from "../molecules/Menubar.svelte";
-	import { TMenuBarItems } from "../../interfaces/TMenuBarItems";
+	import type { TMenuBarItems } from "../../interfaces/TMenuBarItems";
 	import { writable } from "svelte/store";
-	import { ITPLDashboardStore } from "../../interfaces/ITPLDashboardStore";
+	import type { ITPLDashboardStore } from "../../interfaces/ITPLDashboardStore";
 	import { setContext } from "svelte";
 	import { key } from "../../context/tplDashboard";
 	import Button from "../atoms/Button.svelte";

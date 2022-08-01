@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { BEM } from "$lib/models/BEM";
 	import { slide } from 'svelte/transition'
-	import { TPosition } from "$lib/interfaces/TPosition";
+	import type { TPosition } from "$lib/interfaces/TPosition";
 	import Arrow from "./Arrow.svelte";
 
 	export let position: TPosition = "left"

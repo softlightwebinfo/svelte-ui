@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { BEM } from "$lib/models/BEM";
-	import { TPosition } from "$lib/interfaces/TPosition";
+	import type { TPosition } from "$lib/interfaces/TPosition";
 
 	export let position: TPosition = 'up'
 	export let color = 'white'

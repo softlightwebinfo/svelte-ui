@@ -5,7 +5,7 @@
 	bm.append($$props.class);
 </script>
 
-<div class={bm.toString()}>
+<div class={bm.toString()} style="{$$props.style}">
 	<slot/>
 </div>
 

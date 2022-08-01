@@ -8,7 +8,7 @@
 	bm.append($$props.class);
 </script>
 
-<div class="{bm.toString()}" class:all class:flex>
+<div style="{$$props.style}" class="{bm.toString()}" class:all class:flex>
 	<slot/>
 </div>
 

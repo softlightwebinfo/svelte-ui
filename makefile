@@ -6,6 +6,7 @@ build:
 deploy:
 	node ./scripts/deploy.cjs
 	yarn package
+	node ./scripts/deploy.cjs
 	cd package && yarn publish --access public
 	node ./scripts/deploy.cjs
 	git add .

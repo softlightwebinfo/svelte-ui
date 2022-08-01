@@ -37,7 +37,12 @@ const mvFiles = (targetDirectory, outputDirectory) => {
 	fs.cpSync(`${targetDirectory}`, `${outputDirectory}`, {
 		recursive: true,
 	})
-	fs.rmSync(`${outputDirectory}/*.js`)
+	fs.readdir(outputDirectory, (err, files) => {
+		files.forEach(value => {
+			if (!value.includes('.js')) return;
+			fs.rmSync(`${outputDirectory}/${value}`, {recursive: true,})
+		})
+	})
 }
 
 getVersion();
