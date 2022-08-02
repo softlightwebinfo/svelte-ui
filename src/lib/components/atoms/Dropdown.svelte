@@ -42,6 +42,7 @@
 		:global(.UI-DropdownMenu) {
 			position: absolute;
 			top: 100%;
+			z-index: var(--ui-z-index-dropdown);
 		}
 
 	}

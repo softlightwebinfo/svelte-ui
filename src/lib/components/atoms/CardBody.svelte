@@ -2,20 +2,22 @@
 	export let center = false;
 	import { BEM } from "$lib/models/BEM";
 
-	const bm = new BEM('UI-CardBody', {});
+	const bm = new BEM('UI-CardBody', {
+		'UI-CardBody--center': center,
+	});
 	bm.append($$props.class);
 </script>
 
-<section class="{bm.toString()}" style="{$$props.style}" class:center>
+<section class="{bm.toString()}" style="{$$props.style}">
 	<slot/>
 </section>
 
 <style lang="scss">
-	section {
+	.UI-CardBody {
 		padding: 1.25rem;
-	}
 
-	.center {
-		text-align: center;
+		&--center {
+			text-align: center;
+		}
 	}
 </style>

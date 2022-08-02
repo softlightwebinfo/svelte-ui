@@ -90,6 +90,7 @@
 		height: calc(100vh - var(--ui-co-menubar_height));
 		overflow: auto;
 		background: whitesmoke;
+		overflow-x: hidden;
 	}
 
 	.logo {

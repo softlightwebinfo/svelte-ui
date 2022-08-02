@@ -20,6 +20,7 @@
 	export let theme: TThemeColor = '';
 	export let raised = false;
 	export let size: TSize = 'md'
+	export let block = false;
 	$: noLabel = !label && !$$slots.default && !$$slots.left && !$$slots.right;
 </script>
 
@@ -33,6 +34,7 @@
 	class:iconRight={!icon && !!$$slots.right}
 	class:isIcon
 	class:raised
+	class:block
 	style={$$props.style}
 >
 	{#if !!icon || $$slots.left}
@@ -95,11 +97,21 @@
 			outline: 0 none;
 			outline-offset: 0;
 		}
+
+		&:hover {
+			opacity: .8;
+		}
 	}
+
 	span {
 		display: block;
 		line-height: normal;
 		padding: 0.5rem 1rem;
+	}
+
+	.right,
+	.left {
+		color: inherit;
 	}
 
 	.rounded {
@@ -115,13 +127,21 @@
 			display: none;
 		}
 	}
+
 	.raised {
 		box-shadow: var(--ui-raised);
 	}
+
 	.isIcon {
 		justify-content: center;
 		--ui-button_size-width: 33px;
 		--ui-button_size-height: 33px;
+	}
+
+	.block {
+		width: 100%;
+		text-align: center;
+		justify-content: center;
 	}
 
 	@include getThemeColors();

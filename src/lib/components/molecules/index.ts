@@ -12,5 +12,6 @@ import BreadCrumb from "./BreadCrumb.svelte";
  import Menubar from "./Menubar.svelte";
  import SelectButton from "./SelectButton.svelte";
  import TieredMenu from "./TieredMenu.svelte";
+ import TitleDescription from "./TitleDescription.svelte";
  import ToggleButton from "./ToggleButton.svelte";
-export { BreadCrumb, Chips, EditorMarkdown, Flyout, Inplace, InplaceContent, InplaceDisplay, InputNumber, InputPassword, Menu, MenuList, Menubar, SelectButton, TieredMenu, ToggleButton };
+export { BreadCrumb, Chips, EditorMarkdown, Flyout, Inplace, InplaceContent, InplaceDisplay, InputNumber, InputPassword, Menu, MenuList, Menubar, SelectButton, TieredMenu, TitleDescription, ToggleButton };

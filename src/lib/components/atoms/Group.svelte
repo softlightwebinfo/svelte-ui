@@ -17,6 +17,7 @@
 		display: flex;
 		gap: var(--gap);
 		align-items: center;
+		width: 100%;
 	}
 
 	.directionColumn {

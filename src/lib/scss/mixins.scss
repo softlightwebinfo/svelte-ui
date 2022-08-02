@@ -31,3 +31,12 @@
 		border-color: var(--ui-primary);
 	}
 }
+
+@mixin Card {
+	& {
+		background: var(--ui-white);
+		color: #495057;
+		box-shadow: var(--ui-raised);
+		border-radius: 6px;
+	}
+}
