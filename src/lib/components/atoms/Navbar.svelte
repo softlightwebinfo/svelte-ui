@@ -25,10 +25,12 @@
 		display: flex;
 		align-items: center;
 	}
-	@include getThemeColors();
+
+	@include getThemeColors(true, false);
 	.isMenu {
 		--ui-co-navbar_radius: 0;
 	}
+
 	.isFixed {
 		position: fixed;
 		top: 0;

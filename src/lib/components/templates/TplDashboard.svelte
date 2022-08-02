@@ -72,6 +72,9 @@
 			height: var(--ui-co-menubar_height);
 			//grid-column: 1/-1;flex:1
 			flex: 1;
+			z-index: 1;
+			position: sticky;
+			top: 0;
 		}
 
 		:global(.UI-Sidebar) {

@@ -107,6 +107,11 @@
 		display: block;
 		line-height: normal;
 		padding: 0.5rem 1rem;
+		color: inherit;
+	}
+
+	i {
+		color: inherit;
 	}
 
 	.right,
