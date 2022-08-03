@@ -5,17 +5,20 @@
 
 	export let items: IItem[];
 	export let home: IItem;
+	export let isDefault = false;
 </script>
 
-<nav class="UI-BreadCrumb">
+<nav class="UI-BreadCrumb" class:isDefault style="{$$props.style}">
 	<ul>
 		<li class="home">
-			<MenuItemLink href={home.href} icon={home.icon} />
+			<MenuItemLink href={home.href} icon={home.icon}/>
 		</li>
 		{#each items as item}
-			<li><Chevron /></li>
 			<li>
-				<MenuItemLink {...item} />
+				<Chevron/>
+			</li>
+			<li>
+				<MenuItemLink {...item}/>
 			</li>
 		{/each}
 	</ul>
@@ -30,6 +33,7 @@
 		width: 100%;
 		overflow-x: auto;
 	}
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -37,5 +41,11 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: nowrap;
+	}
+
+	.isDefault {
+		background: transparent;
+		border: 0;
+		padding: 0;
 	}
 </style>

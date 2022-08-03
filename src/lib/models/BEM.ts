@@ -10,6 +10,7 @@ export class BEM {
 	}
 
 	append(className: string) {
+		if (!className) return;
 		this.otherClass = [...this.otherClass, className]
 	}
 
