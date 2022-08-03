@@ -1,11 +1,10 @@
 <script lang="ts">
-	export let forLabel = '';
 	export let label = '';
 	export let component = 'label';
 </script>
 
-<svelte:element this={component} for={forLabel} on:click class="UI-Label">
-	<slot />
+<svelte:element this={component} on:click class="UI-Label">
+	<slot/>
 	{label}
 </svelte:element>
 

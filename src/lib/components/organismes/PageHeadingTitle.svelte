@@ -25,7 +25,7 @@
 			<div class="left">
 				<BreadCrumb isDefault {...breadCrumb}/>
 				<Title margin="{false}" {title}/>
-				{#if data}
+				{#if data && data.length}
 					<Toolbar gap="20">
 						{#each data as item}
 							<TextIcon {...item}/>

@@ -21,6 +21,7 @@
 	export let raised = false;
 	export let size: TSize = 'md'
 	export let block = false;
+	export let type: "button" | "submit" = "submit";
 	$: noLabel = !label && !$$slots.default && !$$slots.left && !$$slots.right;
 </script>
 
@@ -35,6 +36,7 @@
 	class:isIcon
 	class:raised
 	class:block
+	{type}
 	style={$$props.style}
 >
 	{#if !!icon || $$slots.left}

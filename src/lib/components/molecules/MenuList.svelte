@@ -8,7 +8,7 @@
 
 <ul class="UI-MenuList">
 	{#each items as item}
-		<MenuItem icon={item.icon} href={item.href} isHeader={item.isHeader}>
+		<MenuItem icon={item.icon} href={item.href} isHeader={item.isHeader} {...item}>
 			{item.label}
 		</MenuItem>
 		{#if !!item.items}

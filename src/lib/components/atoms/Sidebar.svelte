@@ -46,6 +46,7 @@
 		position: relative;
 		height: 100%;
 		transition: all 0.3s ease-in-out;
+		z-index: 1;
 	}
 
 	.open {
