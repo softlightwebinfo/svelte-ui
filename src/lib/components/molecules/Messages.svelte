@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { BEM } from "$lib/models/BEM";
 	import Alert from "../atoms/Alert.svelte";
-	import { IMessageAlert } from "../../interfaces/IMessageAlert";
+	import type { IMessageAlert } from "../../interfaces/IMessageAlert";
 
 	const bm = new BEM('UI-Messages');
 	bm.append($$props.class);
