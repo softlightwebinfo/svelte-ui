@@ -1,25 +1,38 @@
 @import './vars.scss';
+@mixin getThemeColor($name, $isBg: true, $opacity: true) {
+	@if $isBg {
+		background-color: var(--ui-#{$name});
+		color: var(--ui-theme-primary);
+		&:hover {
+			@if $opacity {
+				opacity: 0.9;
+			}
+		}
+	} @else {
+		color: var(--ui-#{$name});
+	}
+}
+
 @mixin getThemeColors($isBg: true, $opacity: true) {
 	@each $name, $color in $colors {
 		.#{$name} {
-			@if $isBg {
-				background-color: var(--ui-#{$name});
-				color: var(--ui-theme-primary);
-				&:hover {
-					@if $opacity {
-						opacity: 0.9;
-					}
-				}
-			} @else {
-				color: var(--ui-#{$name});
-			}
+			@include getThemeColor($name, $isBg, $opacity);
+		}
+	}
+}
+
+
+@mixin getThemeColorsInclude($isBg: true, $opacity: true) {
+	@each $name, $color in $colors {
+		&.#{$name} {
+			@include getThemeColor($name, $isBg, $opacity);
 		}
 	}
 }
 
 @mixin getField {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 	color: #495057;
 	background: var(--ui-white);

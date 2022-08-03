@@ -1,3 +1,5 @@
+test:
+	git commit -am'$(m)'
 dev:
 	yarn storybook
 build:

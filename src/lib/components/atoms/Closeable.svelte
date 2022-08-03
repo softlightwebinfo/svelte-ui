@@ -12,7 +12,7 @@
 
 <style lang="scss">
 	.UI-Closeable {
-		$s: 15px;
+		$s: 20px;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -23,5 +23,6 @@
 		color: white;
 		vertical-align: middle;
 		cursor: pointer;
+		padding: 5px;
 	}
 </style>

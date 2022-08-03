@@ -1,5 +1,6 @@
 import Accordion from "./Accordion.svelte";
  import AccordionItem from "./AccordionItem.svelte";
+ import Alert from "./Alert.svelte";
  import ArrayGrid from "./ArrayGrid.svelte";
  import Arrow from "./Arrow.svelte";
  import Avatar from "./Avatar.svelte";
@@ -64,4 +65,4 @@ import Accordion from "./Accordion.svelte";
  import Toolbar from "./Toolbar.svelte";
  import Window from "./Window.svelte";
  import WindowHeader from "./WindowHeader.svelte";
-export { Accordion, AccordionItem, ArrayGrid, Arrow, Avatar, Badge, BannerImage, BlockUI, Button, Card, CardBody, CardContent, CardFooter, CardHeader, CardList, CardSubTitle, CardTitle, Center, Checkbox, Chevron, Chip, Circle, Close, Closeable, Col, Container, Description, Divider, Dropdown, DropdownMenu, FloatIcon, FormGroup, Group, Input, InputGroup, Item, Label, List, ListBox, MenuAtom, MenuItem, MenuItemLink, MenuSeparator, Navbar, Overlay, OverlayBadge, Panel, Parallax, Portal, Radio, Rate, Rounded, Row, ScrollPanel, Sidebar, Slider, Sticky, SurfaceSection, Switch, Tag, Textarea, Tile, Title, Toolbar, Window, WindowHeader };
+export { Accordion, AccordionItem, Alert, ArrayGrid, Arrow, Avatar, Badge, BannerImage, BlockUI, Button, Card, CardBody, CardContent, CardFooter, CardHeader, CardList, CardSubTitle, CardTitle, Center, Checkbox, Chevron, Chip, Circle, Close, Closeable, Col, Container, Description, Divider, Dropdown, DropdownMenu, FloatIcon, FormGroup, Group, Input, InputGroup, Item, Label, List, ListBox, MenuAtom, MenuItem, MenuItemLink, MenuSeparator, Navbar, Overlay, OverlayBadge, Panel, Parallax, Portal, Radio, Rate, Rounded, Row, ScrollPanel, Sidebar, Slider, Sticky, SurfaceSection, Switch, Tag, Textarea, Tile, Title, Toolbar, Window, WindowHeader };
