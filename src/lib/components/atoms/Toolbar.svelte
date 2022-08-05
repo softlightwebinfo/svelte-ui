@@ -4,10 +4,12 @@
 	export let center = false;
 	export let spaceBetween = false;
 	export let alignCenter = false;
+	export let end = false;
 	export let gap = 5;
 </script>
 
-<div class="Toolbar" style="--ui-co-toolbar_gap: {gap}px" class:alignCenter class:right class:left class:center
+<div class="Toolbar" style="--ui-co-toolbar_gap: {gap}px" class:end class:alignCenter class:right class:left
+	 class:center
 	 class:spaceBetween>
 	<slot/>
 </div>
@@ -19,12 +21,19 @@
 		flex-wrap: wrap;
 		width: 100%;
 	}
+
+	.end {
+		justify-content: flex-end;
+	}
+
 	.right {
 		margin-left: auto;
 	}
+
 	.left {
 		margin-right: auto;
 	}
+
 	.center {
 		margin-left: auto;
 		margin-right: auto;

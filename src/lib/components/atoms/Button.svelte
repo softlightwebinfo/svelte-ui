@@ -22,6 +22,7 @@
 	export let size: TSize = 'md'
 	export let block = false;
 	export let type: "button" | "submit" = "submit";
+	export let loading = false;
 	$: noLabel = !label && !$$slots.default && !$$slots.left && !$$slots.right;
 </script>
 
@@ -29,22 +30,23 @@
 	class={[className, theme, $$props.class, size].join(' ')}
 	class:rounded
 	on:click
-	{disabled}
+	disabled="{disabled || loading}"
 	class:noLabel
 	class:iconLeft={!icon && !!$$slots.left}
 	class:iconRight={!icon && !!$$slots.right}
 	class:isIcon
 	class:raised
 	class:block
+	class:loading
 	{type}
 	style={$$props.style}
 >
-	{#if !!icon || $$slots.left}
+	{#if loading || !!icon || $$slots.left}
 		<div class="left">
 			{#if $$slots.left}
 				<slot name="left" />
 			{:else}
-				<i class={icon} />
+				<i class={loading ? "fa fa-spin fa-spinner": icon}></i>
 			{/if}
 		</div>
 	{/if}

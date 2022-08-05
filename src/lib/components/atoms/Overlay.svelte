@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { BEM } from "../../models/BEM";
 	import Portal from "./Portal.svelte";
+	import { fade } from "svelte/transition";
 
 	const bm = new BEM('UI-Overlay')
 	bm.append($$props.class)
 	export let show: boolean = false;
+	export let duration = 300;
 </script>
 {#if show}
 	<Portal>
-		<div class="{bm.toString()}" style="{$$props.style}" class:show on:click>
+		<div transition:fade={{duration}} class="{bm.toString()}" style="{$$props.style}" class:show on:click>
 			<slot/>
 		</div>
 	</Portal>
