@@ -28,6 +28,7 @@
 		pointer-events: none;
 		transition-property: background-color;
 		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 9;
 	}
 
 	.show {

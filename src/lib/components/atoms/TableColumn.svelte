@@ -8,7 +8,7 @@
 	bm.append($$props.class);
 	$: tag = th ? "th" : "td";
 </script>
-<svelte:element this="{tag}" {colspan} {rowspan} class={bm.toString()} class:th class:td={!th} style={$$props.style}>
+<svelte:element on:click this="{tag}" {colspan} {rowspan} class={bm.toString()} class:th class:td={!th} style={$$props.style}>
 	<slot></slot>
 </svelte:element>
 <style lang='scss'>

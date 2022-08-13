@@ -11,6 +11,9 @@
 	export let small = false;
 	export let showGridLines = true;
 	export let stripedRows = false;
+	export let onClickRow = null;
+	export let onClickRowColumn = null;
+	export let onClickColumnHead = null;
 
 	const bm = new BEM('UI-DataTable');
 	bm.append($$props.class);
@@ -21,13 +24,21 @@
 		<Table {small} {showGridLines} {stripedRows}>
 			<TableRow slot="head">
 				{#each columns as column}
-					<TableColumn th>{column.label}</TableColumn>
+					<TableColumn on:click={onClickColumnHead} th>
+						<slot name="column">
+							{column.label}
+						</slot>
+					</TableColumn>
 				{/each}
 			</TableRow>
-			{#each rows as row}
-				<TableRow>
-					{#each columns as column}
-						<TableColumn>{row[column.key]}</TableColumn>
+			{#each rows as row,indexRow}
+				<TableRow on:click={onClickRow}>
+					{#each columns as column,indexColumn}
+						<TableColumn on:click={onClickRowColumn}>
+							<slot {column} {row} {indexColumn} {indexRow}>
+								{row[column.key]}
+							</slot>
+						</TableColumn>
 					{/each}
 				</TableRow>
 			{/each}

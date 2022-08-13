@@ -4,7 +4,7 @@
 	const bm = new BEM('UI-TableRow');
 	bm.append($$props.class);
 </script>
-<tr class={bm.toString()} style={$$props.style}>
+<tr on:click class={bm.toString()} style={$$props.style}>
 	<slot></slot>
 </tr>
 <style lang='scss'>

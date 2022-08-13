@@ -22,7 +22,7 @@
 
 <Template let:args>
 	<Container style="padding:20px;">
-		<DataTable {...args}/>
+		<DataTable {...args} onClickRow="{console.log}"/>
 	</Container>
 </Template>
 
