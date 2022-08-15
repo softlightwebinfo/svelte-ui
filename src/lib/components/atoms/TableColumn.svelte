@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { BEM } from "$lib/models/BEM";
 
-	export let colspan: number;
-	export let rowspan: number;
+	export let colspan: number = null;
+	export let rowspan: number = null;
 	export let th = false;
 	const bm = new BEM('UI-TableColumn');
 	bm.append($$props.class);

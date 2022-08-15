@@ -17,16 +17,15 @@
 			{:else}
 				<MenuItem
 					on:click={(e)=>{
-						console.log("HOLA",e)
-						e.detail.event.stopPropagation()
 						if(!item.items) return;
+						e.detail.event.stopPropagation()
 						item.open = !item.open;
 					}}
 					command={item.command}
 					disabled={item.disabled}
 					href={item.href}
 					icon={item.icon}
-					iconRight={item.items && `fa fa-chevron-${item.open?'down':'right'}`}
+					iconRight={item.items && `fa fa-chevron-${item.open ? 'down': 'right'}`}
 					open="{item.open}"
 				>
 					{item.label}

@@ -14,7 +14,7 @@
 	.UI-SurfaceSection {
 		background-color: var(--ui-surface-section);
 		position: relative;
-		padding: 2rem 5rem;
+		padding: var(--ui-margin);
 	}
 
 	.flex {

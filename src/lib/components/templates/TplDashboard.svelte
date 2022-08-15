@@ -13,8 +13,8 @@
 	const bm = new BEM('Tpl-Dashboard');
 	bm.append($$props.class);
 
-	export let logo: string;
-	export let logoName: string;
+	export let logo: string = '';
+	export let logoName: string = '';
 	export let menuBar: TMenuBarItems = [];
 	export let showAside = true;
 	export let isFixed = false;
@@ -42,9 +42,15 @@
 		<Menubar {isFixed} items={menuBar} isMenu theme="white" class="menuBar">
 			<div slot="start">
 				<Group gap="20">
-					<Button on:click="{onToggleAside}" theme="{openAside?'primary':''}" isIcon
-							icon="fa fa-bars"></Button>
-					<img class="logo" src="{logo}" alt="{logoName}">
+					<Button
+						on:click="{onToggleAside}"
+						theme="{openAside ? 'primary': ''}"
+						isIcon
+						icon="fa fa-bars"
+					/>
+					{#if logo}
+						<img class="logo" src="{logo}" alt="{logoName}">
+					{/if}
 				</Group>
 			</div>
 			<div slot="end">

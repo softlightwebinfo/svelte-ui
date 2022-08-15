@@ -15,5 +15,12 @@
 		display: block;
 		width: 100%;
 		margin-bottom: 10px;
+
+		> :global {
+			.UI-Label {
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+		}
 	}
 </style>
