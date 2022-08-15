@@ -5,3 +5,4 @@ export * from "./classNames";
  export * from "./random";
  export * from "./range";
  export * from "./sleep";
+ export * from "./validations";
