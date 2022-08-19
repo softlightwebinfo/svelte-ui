@@ -45,6 +45,11 @@
 	&:hover {
 		border-color: var(--ui-primary);
 	}
+
+	&[disabled] {
+		background: var(--ui-disabled);
+		cursor: not-allowed;
+	}
 }
 
 @mixin Card {
