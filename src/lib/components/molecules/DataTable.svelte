@@ -26,7 +26,7 @@
 	<div class="wrapper">
 		<Table {small} {showGridLines} {stripedRows}>
 			<TableRow slot="head">
-				{#each columns as column,indexColumn}
+				{#each columns as column,indexColumn(column.key)}
 					<TableColumn on:click={(e) => onClickColumnHead(e, {column, indexColumn})} th>
 						<slot name="column">
 							{column.label}
@@ -34,7 +34,7 @@
 					</TableColumn>
 				{/each}
 			</TableRow>
-			{#each rows as row,indexRow}
+			{#each rows as row,indexRow(row.id)}
 				<TableRow on:click={(e) => onClickRow(e, { row, indexRow })}>
 					{#each columns as column,indexColumn}
 						<TableColumn on:click={onClickRowColumn}>

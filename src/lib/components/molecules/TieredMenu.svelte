@@ -17,7 +17,7 @@
 			{:else}
 				<MenuItem
 					on:click={(e)=>{
-						if(!item.items) return;
+						if(!item.items.length) return;
 						e.detail.event.stopPropagation()
 						item.open = !item.open;
 					}}
@@ -25,6 +25,7 @@
 					disabled={item.disabled}
 					href={item.href}
 					icon={item.icon}
+					active={item.active}
 					iconRight={item.items && `fa fa-chevron-${item.open ? 'down': 'right'}`}
 					open="{item.open}"
 				>
