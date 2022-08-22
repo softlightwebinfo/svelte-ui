@@ -7,8 +7,11 @@
 	import SurfaceSection from "../atoms/SurfaceSection.svelte";
 	import Title from "../atoms/Title.svelte";
 	import Description from "../atoms/Description.svelte";
+	import { createEventDispatcher } from "svelte";
 
 	const bm = new BEM('UI-PageHeading');
+	const dispatch = createEventDispatcher();
+
 	bm.append($$props.class);
 	export let image: string;
 	export let noImage = false;
@@ -17,6 +20,10 @@
 	export let description: string;
 	export let extra: string[] = []
 	export let extraSeparator = ' | ';
+
+	const onClickAvatar = () => {
+		dispatch("clickAvatar")
+	};
 </script>
 <header class={bm.toString()} style={$$props.style}>
 	<BannerImage {noImage} {image}/>
@@ -24,7 +31,7 @@
 		<Group spaceBetween class="UI-PageHeading__content">
 			<div>
 				<Card marginBottom inline>
-					<Avatar big size="xxl" image={avatar}/>
+					<Avatar big image={avatar} on:click={onClickAvatar} size="xxl"/>
 				</Card>
 				<Title title="{name}"></Title>
 				<Description {description}/>
