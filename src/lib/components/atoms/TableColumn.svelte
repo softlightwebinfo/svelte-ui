@@ -4,11 +4,15 @@
 	export let colspan: number = null;
 	export let rowspan: number = null;
 	export let th = false;
+	export let width = "";
+
 	const bm = new BEM('UI-TableColumn');
 	bm.append($$props.class);
 	$: tag = th ? "th" : "td";
 </script>
-<svelte:element on:click this="{tag}" {colspan} {rowspan} class={bm.toString()} class:th class:td={!th} style={$$props.style}>
+<svelte:element
+	class={bm.toString()} class:td={!th} class:th {colspan} on:click {rowspan} style={`${$$props.style}`}
+	style:width this="{tag}">
 	<slot></slot>
 </svelte:element>
 <style lang='scss'>

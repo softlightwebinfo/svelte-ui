@@ -11,13 +11,20 @@
 	export let small = false;
 	export let showGridLines = true;
 	export let stripedRows = false;
+	export let styleHeadActions = '';
+
 	export let onClickRow = () => {
+		return
 	};
 	export let onClickRowColumn = () => {
+		return
 	};
 	export let onClickColumnHead = () => {
+		return
 	};
-
+	export let styleRow = ({row, indexRow}) => {
+		return '';
+	}
 	const bm = new BEM('UI-DataTable');
 	bm.append($$props.class);
 </script>
@@ -27,7 +34,11 @@
 		<Table {small} {showGridLines} {stripedRows}>
 			<TableRow slot="head">
 				{#each columns as column,indexColumn(column.key)}
-					<TableColumn on:click={(e) => onClickColumnHead(e, {column, indexColumn})} th>
+					<TableColumn
+						style="{column.styleHead}" width={column.width}
+						on:click={(e) => onClickColumnHead(e, {column, indexColumn})}
+						th
+					>
 						<slot name="column">
 							{column.label}
 						</slot>
@@ -35,14 +46,22 @@
 				{/each}
 			</TableRow>
 			{#each rows as row,indexRow(row.id)}
-				<TableRow on:click={(e) => onClickRow(e, { row, indexRow })}>
+				<TableRow
+					style={styleRow({row, indexRow})??''}
+					on:click={(e) => onClickRow(e, { row, indexRow })}
+				>
 					{#each columns as column,indexColumn}
-						<TableColumn on:click={onClickRowColumn}>
+						<TableColumn style="{column.styleHeadBody}" width={column.width} on:click={onClickRowColumn}>
 							<slot {column} {row} {indexColumn} {indexRow}>
 								{row[column.key]}
 							</slot>
 						</TableColumn>
 					{/each}
+					{#if $$slots.actions}
+						<TableColumn style="{styleHeadActions}">
+							<slot name="actions" {row} {indexRow}></slot>
+						</TableColumn>
+					{/if}
 				</TableRow>
 			{/each}
 		</Table>

@@ -9,4 +9,8 @@ export interface ITableColumn {
 	label: string;
 	type?: string;
 	options?: any;
+	width?: string;
+	styleRow?: string;
+	styleHead?: string;
+	styleHeadBody?: string;
 }

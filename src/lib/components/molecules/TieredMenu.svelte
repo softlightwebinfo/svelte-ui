@@ -17,7 +17,7 @@
 			{:else}
 				<MenuItem
 					on:click={(e)=>{
-						if(!item.items?.length) return;
+						if(!item.items && !item.items.length) return;
 						e.detail.event.stopPropagation()
 						item.open = !item.open;
 					}}
