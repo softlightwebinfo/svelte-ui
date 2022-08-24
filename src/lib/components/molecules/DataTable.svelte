@@ -12,7 +12,8 @@
 	export let showGridLines = true;
 	export let stripedRows = false;
 	export let styleHeadActions = '';
-
+	export let columnActionName = "Settings";
+	export let actionsWidth = "200px";
 	export let onClickRow = () => {
 		return
 	};
@@ -39,11 +40,17 @@
 						on:click={(e) => onClickColumnHead(e, {column, indexColumn})}
 						th
 					>
-						<slot name="column">
+						<slot name="column" {column} {indexColumn}>
 							{column.label}
 						</slot>
 					</TableColumn>
 				{/each}
+				{#if $$slots.actions}
+					<TableColumn width="{actionsWidth}" th style="{styleHeadActions}">
+						<slot column={null} indexColumn={null} row={null} indexRow={null}
+							  name="actionColumn">{columnActionName}</slot>
+					</TableColumn>
+				{/if}
 			</TableRow>
 			{#each rows as row,indexRow(row.id)}
 				<TableRow
@@ -52,14 +59,14 @@
 				>
 					{#each columns as column,indexColumn}
 						<TableColumn style="{column.styleHeadBody}" width={column.width} on:click={onClickRowColumn}>
-							<slot {column} {row} {indexColumn} {indexRow}>
+							<slot value="{row[column.key]}" {column} {row} {indexColumn} {indexRow}>
 								{row[column.key]}
 							</slot>
 						</TableColumn>
 					{/each}
 					{#if $$slots.actions}
-						<TableColumn style="{styleHeadActions}">
-							<slot name="actions" {row} {indexRow}></slot>
+						<TableColumn width="{actionsWidth}" style="{styleHeadActions}">
+							<slot column={null} indexColumn={null} name="actions" {row} {indexRow}></slot>
 						</TableColumn>
 					{/if}
 				</TableRow>

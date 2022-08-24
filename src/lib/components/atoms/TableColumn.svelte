@@ -11,7 +11,7 @@
 	$: tag = th ? "th" : "td";
 </script>
 <svelte:element
-	class={bm.toString()} class:td={!th} class:th {colspan} on:click {rowspan} style={`${$$props.style}`}
+	class={bm.toString()} class:td={!th} class:th {colspan} on:click {rowspan} style={$$props.style}
 	style:width this="{tag}">
 	<slot></slot>
 </svelte:element>
