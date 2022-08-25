@@ -41,16 +41,15 @@
 </script>
 
 <div class="container" style="grid-template-rows: {row}; grid-template-columns: {col};">
-
 	{#each {length: grid[0]} as _, i (i)}
 		{#each {length: grid[1]} as _, j (j)}
 			<div class:active={is_active[i][j]}
 				 on:click={() => select(i, j)}
 				 on:mouseover={() => hover(i, j)}
+				 on:focus
 			></div>
 		{/each}
 	{/each}
-
 </div>
 <strong>Current: </strong>{hover_end}<br>
 <strong>Coords:</strong> {start} {end[0] ? '-' : ''} {end}

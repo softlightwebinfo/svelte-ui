@@ -2,6 +2,8 @@
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 	import DataTable from "../lib/components/molecules/DataTable.svelte";
 	import Container from "../lib/components/atoms/Container.svelte";
+	import Toolbar from "$atoms/Toolbar.svelte";
+	import Button from "$atoms/Button.svelte";
 
 	export let columns = [
 		{label: "ID", key: "id", type: "string"},
@@ -22,7 +24,11 @@
 
 <Template let:args>
 	<Container style="padding:20px;">
-		<DataTable {...args} onClickRow="{console.log}"/>
+		<DataTable {...args} onClickRow="{console.log}">
+			<Toolbar slot="actions">
+				<Button>Guardar</Button>
+			</Toolbar>
+		</DataTable>
 	</Container>
 </Template>
 

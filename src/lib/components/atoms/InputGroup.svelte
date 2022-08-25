@@ -57,7 +57,7 @@
 		align-items: center;
 		justify-content: center;
 
-		+ .addon {
+		~ .addon {
 			border-left: 0 none;
 		}
 		&:first-child {

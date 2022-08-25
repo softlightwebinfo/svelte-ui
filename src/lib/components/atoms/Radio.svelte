@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { BEM } from '$lib/models/BEM';
 
-	export let id = '';
 	export let disabled = false;
 	export let value = '';
 	export let group;
@@ -9,13 +8,11 @@
 	const bm = new BEM('UI-Radio');
 	bm.append($$props.class);
 </script>
-<label class={bm.toString()} class:disabled on:click class:checked="{group==value}">
+<label class={bm.toString()} class:disabled on:click class:checked="{group===value}">
 	<input {value} bind:group type="radio" {disabled} on:change>
-
 	<div class="box">
-		<span class="icon"/>
+		<span class="icon"></span>
 	</div>
-
 	<slot/>
 </label>
 

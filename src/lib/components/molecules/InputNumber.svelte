@@ -1,14 +1,15 @@
 <script lang="ts">
 	import Input from '$lib/components/atoms/Input.svelte';
-	export let value: string = '';
-	export let previousN = value;
-	export let disabled: boolean = false;
-	export let placeholder: string = '';
-	export let readonly: boolean = false;
+
+	export let value = '';
+	export const previousN = value;
+	export let disabled = false;
+	export let placeholder = '';
+	export let readonly = false;
 	export let min: number | null;
 	export let max: number | null;
 	export let prev: string;
-	export let isFormat: boolean = true;
+	export let isFormat = true;
 	$: {
 		value = value.replace(/\./g, '');
 

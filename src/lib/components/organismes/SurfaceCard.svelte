@@ -19,9 +19,7 @@
 <Card class={bm.toString()} style={$$props.style}>
 	<CardBody center>
 		<img src="{image}" alt="{title}" {title}>
-		<Description
-			description="Nunc mi ipsum faucibus vitae aliquet nec. Lacus sed viverra tellus in hac habitasse platea dictumst."
-		/>
+		<Description {description}/>
 		<a href="{buttonUrl}">
 			<Button {theme} icon="{buttonIcon}">{buttonText}</Button>
 		</a>

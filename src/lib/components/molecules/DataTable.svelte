@@ -40,33 +40,32 @@
 						on:click={(e) => onClickColumnHead(e, {column, indexColumn})}
 						th
 					>
-						<slot name="column" {column} {indexColumn}>
+						<slot row={null} indexRow={null} name="column" {column} {indexColumn}>
 							{column.label}
 						</slot>
 					</TableColumn>
 				{/each}
 				{#if $$slots.actions}
 					<TableColumn width="{actionsWidth}" th style="{styleHeadActions}">
-						<slot column={null} indexColumn={null} row={null} indexRow={null}
-							  name="actionColumn">{columnActionName}</slot>
+						<slot name="actionColumn">{columnActionName}</slot>
 					</TableColumn>
 				{/if}
 			</TableRow>
 			{#each rows as row,indexRow(row.id)}
 				<TableRow
-					style={styleRow({row, indexRow})??''}
+					style={styleRow({row, indexRow})}
 					on:click={(e) => onClickRow(e, { row, indexRow })}
 				>
 					{#each columns as column,indexColumn}
 						<TableColumn style="{column.styleHeadBody}" width={column.width} on:click={onClickRowColumn}>
-							<slot value="{row[column.key]}" {column} {row} {indexColumn} {indexRow}>
+							<slot name="row" {column} {row} {indexColumn} {indexRow}>
 								{row[column.key]}
 							</slot>
 						</TableColumn>
 					{/each}
 					{#if $$slots.actions}
 						<TableColumn width="{actionsWidth}" style="{styleHeadActions}">
-							<slot column={null} indexColumn={null} name="actions" {row} {indexRow}></slot>
+							<slot name="actions" {row} {indexRow}></slot>
 						</TableColumn>
 					{/if}
 				</TableRow>
