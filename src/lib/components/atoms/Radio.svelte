@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BEM } from '$lib/models/BEM';
+	import {BEM} from '$lib/models/BEM';
 
 	export let disabled = false;
 	export let value = '';

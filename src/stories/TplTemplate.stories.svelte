@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
+	import {Meta, Story, Template} from '@storybook/addon-svelte-csf';
 	import TplDashboard from "../lib/components/templates/TplDashboard.svelte";
 	import Avatar from "../lib/components/atoms/Avatar.svelte";
 	import Button from "../lib/components/atoms/Button.svelte";
